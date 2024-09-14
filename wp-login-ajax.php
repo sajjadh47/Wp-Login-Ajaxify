@@ -3,7 +3,7 @@
 Plugin Name: Ajaxify WP Login
 Plugin URI : https://wordpress.org/plugins/wp-login-ajaxify/
 Description: Login Into Wordpress Via Ajax Request.
-Version: 1.0.2
+Version: 1.0.4
 Author: Sajjad Hossain Sagor
 Author URI: https://profiles.wordpress.org/sajjad67
 Text Domain: wp-login-ajax
@@ -29,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Define Plugin Folders Path
 // ---------------------------------------------------------
 define( "WPLA_PLUGIN_PATH", plugin_dir_path( __FILE__ ) );
+
 define( "WPLA_PLUGIN_URL", plugin_dir_url( __FILE__ ) );
 
 // ---------------------------------------------------------
@@ -58,21 +59,21 @@ function wpla_login_ajax()
 {
 	extract( $_POST );
 
-	$credentials = array( 'user_login' => $login, 'user_password'=> $pass, 'remember' => ! empty( $rememberme ) );
+	$credentials 	= array( 'user_login' => $login, 'user_password'=> $pass, 'remember' => ! empty( $rememberme ) );
 
-	$loginResult = wp_signon( $credentials );
+	$loginResult 	= wp_signon( $credentials );
 
-	$result = array();
+	$result 		= array();
 
 	if ( strtolower( get_class( $loginResult ) ) == 'wp_user' )
 	{
-		$result['wp_success'] = "Successfully Logged in, redirecting...";
+		$result['wp_success']	= "Successfully Logged in, redirecting...";
 		
 		wp_send_json( $result );
 	}
 	elseif ( strtolower( get_class( $loginResult ) ) == 'wp_error' )
 	{
-		$result['wp_error'] = $loginResult->get_error_message();
+		$result['wp_error'] 	= $loginResult->get_error_message();
 		
 		wp_send_json( $result );
 	}

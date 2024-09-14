@@ -3,8 +3,8 @@
 **Contributors:** sajjad67 \
 **Tags:** user,user-login,ajax,wp-login,wp-custom-login,ajax-login,login-ajax \
 **Requires at least:** 5.6 \
-**Tested up to:** 6.0 \
-**Stable tag:** 1.0.2 \
+**Tested up to:** 6.6 \
+**Stable tag:** 1.0.4 \
 **License:** GPLv2 \
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Just activate the plugin, you are good to go. All are done for you.
 
 ## Changelog
 
+### 1.0.4
+
+- checked upto 6.6 wp version
+### 1.0.3
+
+- checked upto 6.3 wp version
 ### 1.0.2
 
 - checked upto 5.3 wp version
